@@ -1,16 +1,8 @@
 import React from 'react';
 import './App.css';
 import TitleBar from './TitleBar';
-const { shell } = window.require('electron');
 
 export default function App() {
-  const [theme, setTheme] = React.useState('light');
-  React.useEffect(() => {
-    document.body.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const openUrl = url => shell.openExternal(url);
-
   return (
     <div className="ide-container">
       <TitleBar />
@@ -18,18 +10,18 @@ export default function App() {
         <div className="dropdown">
           <button className="menu-btn">Settings ▼</button>
           <div className="dropdown-content">
-            <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>Theme ({theme === 'light' ? 'Light' : 'Dark'})</button>
-            <button disabled>Extensions</button>
-            <button disabled>Auto Install</button>
-            <button disabled>Check for updates</button>
+            <button className="dropdown-btn" onClick={() => document.body.classList.toggle('dark-theme')}>Theme</button>
+            <button className="dropdown-btn">Extensions</button>
+            <button className="dropdown-btn">Auto Install</button>
+            <button className="dropdown-btn">Check for updates</button>
           </div>
         </div>
         <div className="dropdown">
           <button className="menu-btn">Help ▼</button>
           <div className="dropdown-content">
-            <button onClick={() => openUrl('https://oxygenlowssoftware.netlify.app/software/IDE')}>Documentation</button>
-            <button onClick={() => openUrl('https://oxygenlowssoftware.netlify.app/software/IDE/Extensions')}>Extensions</button>
-            <button onClick={() => openUrl('https://github.com/OxygenLow-s-Organization/OxygenLows-IDE')}>Github</button>
+            <button className="dropdown-btn" onClick={() => window.open('https://oxygenlowssoftware.netlify.app/software/IDE', '_blank')}>Documentation</button>
+            <button className="dropdown-btn" onClick={() => window.open('https://oxygenlowssoftware.netlify.app/software/IDE/Extensions', '_blank')}>Extensions</button>
+            <button className="dropdown-btn" onClick={() => window.open('https://github.com/OxygenLow-s-Organization/OxygenLows-IDE', '_blank')}>Github</button>
           </div>
         </div>
         <span className="menu-separator">|</span>
