@@ -8,10 +8,8 @@ export default function App() {
         <span>File</span>
         <span>Edit</span>
         <span>View</span>
-        <span>Extensions</span>
-        <span>AI</span>
-        <span>Cloud</span>
-        <span>Debug</span>
+        <span>Window</span>
+        <span>Help</span>
       </header>
       <aside className="sidebar">
         <div className="sidebar-title">Projects</div>
