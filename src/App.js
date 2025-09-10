@@ -1,15 +1,37 @@
 import React from 'react';
 import './App.css';
 import TitleBar from './TitleBar';
+const { shell } = window.require('electron');
 
 export default function App() {
+  const [theme, setTheme] = React.useState('light');
+  React.useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const openUrl = url => shell.openExternal(url);
+
   return (
     <div className="ide-container">
       <TitleBar />
       <header className="menu-bar">
-        <span>File</span>
-        <span>Settings</span>
-        <span>Help</span>
+        <div className="dropdown">
+          <button className="menu-btn">Settings ▼</button>
+          <div className="dropdown-content">
+            <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>Theme ({theme === 'light' ? 'Light' : 'Dark'})</button>
+            <button disabled>Extensions</button>
+            <button disabled>Auto Install</button>
+            <button disabled>Check for updates</button>
+          </div>
+        </div>
+        <div className="dropdown">
+          <button className="menu-btn">Help ▼</button>
+          <div className="dropdown-content">
+            <button onClick={() => openUrl('https://oxygenlowssoftware.netlify.app/software/IDE')}>Documentation</button>
+            <button onClick={() => openUrl('https://oxygenlowssoftware.netlify.app/software/IDE/Extensions')}>Extensions</button>
+            <button onClick={() => openUrl('https://github.com/OxygenLow-s-Organization/OxygenLows-IDE')}>Github</button>
+          </div>
+        </div>
         <span className="menu-separator">|</span>
         <button className="menu-btn">Undo</button>
         <button className="menu-btn">Redo</button>
