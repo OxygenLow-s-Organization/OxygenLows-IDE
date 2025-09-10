@@ -8,10 +8,16 @@ export default function App() {
       <TitleBar />
       <header className="menu-bar">
         <span>File</span>
-        <span>Edit</span>
-        <span>View</span>
-        <span>Window</span>
+        <span>Settings</span>
         <span>Help</span>
+        <span className="menu-separator">|</span>
+        <button className="menu-btn">Undo</button>
+        <button className="menu-btn">Redo</button>
+        <button className="menu-btn">Build</button>
+        <button className="menu-btn">Build To</button>
+        <button className="menu-btn">Run</button>
+        <button className="menu-btn">Save</button>
+        <button className="menu-btn">Save As</button>
       </header>
       <aside className="sidebar">
         <div className="sidebar-title">Projects</div>

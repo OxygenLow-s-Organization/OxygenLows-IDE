@@ -59,8 +59,28 @@ body, html, #root {
   background: #222e;
   color: #fff;
   padding: 0 16px;
-  gap: 24px;
+  gap: 18px;
   font-size: 1.1em;
+  height: 48px;
+}
+.menu-separator {
+  margin: 0 12px;
+  color: #888;
+  font-size: 1.2em;
+}
+.menu-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  margin-right: 4px;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.menu-btn:hover {
+  background: #444;
 }
 .sidebar {
   grid-area: sidebar;
