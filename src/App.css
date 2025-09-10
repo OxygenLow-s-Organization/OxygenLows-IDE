@@ -1,0 +1,75 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.ide-container {
+  display: grid;
+  grid-template-areas:
+    'menu-bar menu-bar'
+    'sidebar editor-area'
+    'status-bar status-bar';
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 48px 1fr 28px;
+  height: 100vh;
+}
+.menu-bar {
+  grid-area: menu-bar;
+  display: flex;
+  align-items: center;
+  background: #222e;
+  color: #fff;
+  padding: 0 16px;
+  gap: 24px;
+  font-size: 1.1em;
+}
+.sidebar {
+  grid-area: sidebar;
+  background: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 12px;
+}
+.sidebar-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.editor-area {
+  grid-area: editor-area;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.tabs {
+  display: flex;
+  background: #eaeaea;
+  border-bottom: 1px solid #ccc;
+  padding: 0 8px;
+}
+.tab {
+  padding: 8px 16px;
+  margin-right: 4px;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+.tab.active {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+.editor-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.2em;
+}
+.status-bar {
+  grid-area: status-bar;
+  background: #222e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 0.95em;
+}
