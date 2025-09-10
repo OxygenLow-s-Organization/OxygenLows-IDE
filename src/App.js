@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
+import TitleBar from './TitleBar';
 
 export default function App() {
   return (
     <div className="ide-container">
+      <TitleBar />
       <header className="menu-bar">
         <span>File</span>
         <span>Edit</span>

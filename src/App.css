@@ -3,14 +3,48 @@ body, html, #root {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
 }
+.title-bar {
+  height: 32px;
+  background: #222e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  -webkit-app-region: drag;
+}
+.title-bar .title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.window-controls {
+  display: flex;
+  gap: 4px;
+  -webkit-app-region: no-drag;
+}
+.window-controls button {
+  background: #222e;
+  color: #fff;
+  border: none;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.window-controls button:hover {
+  background: #444;
+}
 .ide-container {
   display: grid;
   grid-template-areas:
+    'title-bar title-bar'
     'menu-bar menu-bar'
     'sidebar editor-area'
     'status-bar status-bar';
   grid-template-columns: 220px 1fr;
-  grid-template-rows: 48px 1fr 28px;
+  grid-template-rows: 32px 48px 1fr 28px;
   height: 100vh;
 }
 .menu-bar {
