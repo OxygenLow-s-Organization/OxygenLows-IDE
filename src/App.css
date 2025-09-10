@@ -3,7 +3,6 @@ body, html, #root {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #222e;
-}
 .title-bar {
   grid-area: title-bar;
   height: 32px;
